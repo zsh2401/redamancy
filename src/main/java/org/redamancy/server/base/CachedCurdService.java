@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @author zsh2401
- * @program serein
+ * @program redamancy
  * @create 2020-12-06 21:53
  **/
 public abstract class CachedCurdService<ID extends Serializable, E extends IEntity<ID>>

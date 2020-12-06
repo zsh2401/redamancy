@@ -5,6 +5,7 @@ package org.redamancy.server.style.functional;
  * @program serein
  * @create 2020-12-06 21:29
  **/
+@FunctionalInterface
 public interface Action1<A0> {
     void action(A0 a0);
 }

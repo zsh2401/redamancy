@@ -1,5 +1,6 @@
 package org.redamancy.server;
 
+import lombok.Getter;
 import org.greenrobot.eventbus.EventBus;
 import org.redamancy.server.event.ApplicationStartupEvent;
 import org.springframework.boot.SpringApplication;
@@ -8,12 +9,14 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
- * Serein Application.
+ * Application.
  */
 @SpringBootApplication
 public class App {
+    @Getter
     private static ApplicationContext context;
 
+    @Deprecated
     public static ApplicationContext current() {
         return context;
     }

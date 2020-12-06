@@ -1,5 +1,9 @@
 #mb:
 #  config: mb/mb-config.xml
+redamancy:
+  name: redamancy-template
+  features:
+    info-api: true
 spring:
   datasource:
     username:

@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 /**
  * @author zsh2401
- * @program serein
+ * @program redamancy
  * @create 2020-12-06 23:44
  **/
 public class CurdControllerBase<ID extends Serializable, E extends IEntity<ID>> {

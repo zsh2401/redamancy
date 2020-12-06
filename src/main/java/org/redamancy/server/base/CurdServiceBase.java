@@ -14,7 +14,7 @@ import java.util.Optional;
 
 /**
  * @author zsh2401
- * @program serein
+ * @program redamancy
  * @create 2020-12-06 21:47
  **/
 public abstract class CurdServiceBase<ID extends Serializable, E extends IEntity<ID>> implements ICurdService<ID, E> {
