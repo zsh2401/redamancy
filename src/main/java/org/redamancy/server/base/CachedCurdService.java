@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.redamancy.server.service.IRedamancyConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -19,6 +20,10 @@ import java.util.List;
  **/
 public abstract class CachedCurdService<ID extends Serializable, E extends IEntity<ID>>
         extends CurdServiceBase<ID, E> {
+
+    @Autowired
+    private IRedamancyConfiguration configuration;
+
     @Autowired
     @Getter(AccessLevel.PROTECTED)
     private RedisTemplate redisTemplate;
@@ -56,6 +61,9 @@ public abstract class CachedCurdService<ID extends Serializable, E extends IEnti
     }
 
     protected E delete(ID id) {
+        if (!configuration.isFeatureEnabled("redis_cached")) {
+            return null;
+        }
         final RedisTemplate template = getRedisTemplate();
         final String key = keyFor(id);
         E deleted = null;
@@ -71,6 +79,9 @@ public abstract class CachedCurdService<ID extends Serializable, E extends IEnti
 
     @Nullable
     protected E put(E e) {
+        if (!configuration.isFeatureEnabled("redis_cached")) {
+            return null;
+        }
         final RedisTemplate template = getRedisTemplate();
         final String key = keyFor(e.getId());
         final ValueOperations ops = template.opsForValue();
@@ -87,6 +98,9 @@ public abstract class CachedCurdService<ID extends Serializable, E extends IEnti
 
     @Nullable
     protected E get(ID id) {
+        if (!configuration.isFeatureEnabled("redis_cached")) {
+            return null;
+        }
         final RedisTemplate template = getRedisTemplate();
         final String key = keyFor(id);
         final ValueOperations ops = template.opsForValue();

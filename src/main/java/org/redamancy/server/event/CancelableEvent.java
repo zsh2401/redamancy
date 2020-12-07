@@ -20,19 +20,12 @@ public class CancelableEvent extends Event {
     private final CancelMode cancelMode;
 
     @Getter
-    private boolean cancelled;
+    private boolean cancelled = false;
 
     public CancelableEvent(Object sender, CancelMode mode) {
         super(sender);
         this.cancelMode = mode;
     }
-
-    public void cancel() {
-    }
-
-    private static final CancelMode DEFAULT_CANCEL_MODE = CancelMode.ONE_VOTE_TO_CANCEL;
-    private static final boolean DEFAULT_CANCEL_VALUE = false;
-    private static final boolean COULD_RESET_CANCEL_MODE = true;
 
     public void setCancel(boolean value) {
         switch (this.cancelMode) {

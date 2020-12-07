@@ -1,12 +1,7 @@
 package org.redamancy.server.event;
 
-import lombok.Data;
 import lombok.Getter;
-import lombok.ToString;
 import org.jetbrains.annotations.Nullable;
-
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * All event's base class in serein system.
@@ -19,10 +14,10 @@ public abstract class Event {
 
     @Getter
     @Nullable
-    private final Object sender;
+    private final Object source;
 
     public Event(@Nullable Object sender) {
-        this.sender = sender;
+        this.source = sender;
         this.raiseTime = now();
     }
 

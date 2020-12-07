@@ -3,8 +3,8 @@ redamancy:
   version: 0.0.1-beta
   features:
     - info-api
-    - tick
-    - cached
+#    - tick
+    - redis_cached
 
 spring:
   datasource:
