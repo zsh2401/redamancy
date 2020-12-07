@@ -1,6 +1,8 @@
 package org.redamancy.server.entity;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
 import org.redamancy.server.base.IEntity;
 
 import javax.persistence.*;
@@ -13,6 +15,7 @@ public class Account implements IEntity<Long> {
     @Column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     @Column(nullable = false)
