@@ -1,9 +1,11 @@
-#mb:
-#  config: mb/mb-config.xml
 redamancy:
-  name: redamancy-template
+  appname: redamancy-template
+  version: 0.0.1-beta
   features:
-    info-api: true
+    - info-api
+    - tick
+    - cached
+
 spring:
   datasource:
     username:

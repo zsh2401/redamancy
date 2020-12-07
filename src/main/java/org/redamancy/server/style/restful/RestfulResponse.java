@@ -34,7 +34,7 @@ public class RestfulResponse<D> {
         return new RestfulResponse<R>(DEFAULT_OK_CODE, result, null);
     }
 
-    public static <R> RestfulResponse error(int statusCode, @NotNull Exception cause) {
+    public static <R> RestfulResponse error(int statusCode, @NotNull Throwable cause) {
         return new RestfulResponse<R>(statusCode, null, cause.toString());
     }
 
