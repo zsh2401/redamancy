@@ -15,7 +15,6 @@ import java.util.concurrent.*;
  * @
  */
 @Configuration
-@ComponentScan(basePackages = "org.redamancy.service.impl")
 public class Beans {
 
     @Bean

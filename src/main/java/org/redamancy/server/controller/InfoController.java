@@ -8,7 +8,7 @@ import lombok.Setter;
 import org.redamancy.server.exception.RestfulException;
 import org.redamancy.server.service.IRedamancyConfiguration;
 import org.redamancy.server.style.condition.OptionalFeature;
-import org.redamancy.server.style.restful.Restful;
+import org.redamancy.server.style.restful.RestfulResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,8 +31,7 @@ public class InfoController {
     private IRedamancyConfiguration configuration;
 
     @GetMapping
-    @Restful
-    @OptionalFeature("info-apixxx")
+    @OptionalFeature("info-api")
     public Object all() throws RestfulException, IOException {
         return new SystemInfo();
     }

@@ -4,11 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.redamancy.server.exception.RestfulException;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author zsh2401
@@ -16,11 +12,11 @@ import javax.servlet.http.HttpServletResponse;
  * @create 2020-12-06 21:33
  **/
 @Slf4j
-public class RestfulHandler {
-    private RestfulHandler() {
+public class RestfulResultHandler {
+    private RestfulResultHandler() {
     }
 
-    public static Object handle(ProceedingJoinPoint pjp, Restful restful) throws Throwable {
+    public static Object handle(ProceedingJoinPoint pjp, RestfulResult restful) throws Throwable {
         Logger logger = log;
         try {
             Object result = pjp.proceed();

@@ -37,7 +37,7 @@ import java.lang.annotation.Target;
  *
  * <b>THROWS EXCEPTION</b>
  * Is there any possibility that method could be executed correctly under some special condition?
- * {@link RestfulHandler#handle(ProceedingJoinPoint, Restful)} also considered this situation.
+ * {@link RestfulResultHandler#handle(ProceedingJoinPoint, RestfulResult)} also considered this situation.
  * the Exceptions you threw will be also caught and packed with {@link RestfulResponse} and return to the API Caller.
  * <ul>
  *     <li>Returned {@link org.redamancy.server.exception.RestfulException}: When you returns an RestfulResponse instance,
@@ -69,5 +69,5 @@ import java.lang.annotation.Target;
  **/
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface Restful {
+public @interface RestfulResult {
 }
