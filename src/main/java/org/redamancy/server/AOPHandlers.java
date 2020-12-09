@@ -21,12 +21,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class AOPHandlers {
 
-//    @Around("@annotation(restful)")
-//    @Order
-//    public final Object restfulResultHandler(ProceedingJoinPoint pjp, RestfulResult restful) throws Throwable {
-//        return RestfulResultHandler.handle(pjp, restful);
-//    }
-
     @Around("@annotation(optionalfeature)")
     public final Object featureHandler(ProceedingJoinPoint pjp, OptionalFeature optionalfeature) throws Throwable {
         return OptionalFeatureHandler.handle(pjp, optionalfeature);
